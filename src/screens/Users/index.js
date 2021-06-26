@@ -23,7 +23,7 @@ export default function User({navigation}) {
   useEffect(() => {
     firebase
       .database()
-      .ref('cadastros')
+      .ref('users')
       .on('value', snapshot => {
         snapshot.forEach(item => {
           setData(prevState => [
