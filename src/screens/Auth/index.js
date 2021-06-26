@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Alert} from 'react-native';
+import {Alert, View} from 'react-native';
 import Container from '../../components/Container';
 import Card from '../../components/Card';
 import TextInput from '../../components/TextInput';
@@ -53,6 +53,10 @@ export default function Auth({navigation}) {
     }
   }
 
+  function handleAdd() {
+    navigation.navigate('Signup');
+  }
+
   return (
     <Container>
       <Card>
@@ -68,7 +72,10 @@ export default function Auth({navigation}) {
           value={password}
           name="password"
         />
-        <Button label="Acessar" handle={handleSubmit} />
+        <View style={{flexDirection: 'row'}}>
+          <Button label="Acessar" handle={handleSubmit} />
+          <Button label="Registrar-se" handle={handleAdd} />
+        </View>
       </Card>
     </Container>
   );
